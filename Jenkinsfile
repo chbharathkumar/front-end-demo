@@ -29,16 +29,16 @@ pipeline
                 sh 'docker push nagarajubatchu1/front-end-1-${BUILD_NUMBER}'
             }
         }
-        stage('kubernetes'){
-            steps{
-                sh '''
-                cd /root/
-                kubectl delete -f complete-demo.yaml
-                sed -i "s/front-end-1-.*/front-end-1-${BUILD_NUMBER}/g" complete-demo.yaml
-                kubectl create -f complete-demo.yaml
-                '''
-            }
-        }
+//        stage('kubernetes'){
+//            steps{
+//                sh '''
+//                cd /root/
+//                kubectl delete -f complete-demo.yaml
+//                sed -i "s/front-end-1-.*/front-end-1-${BUILD_NUMBER}/g" complete-demo.yaml
+//                kubectl create -f complete-demo.yaml
+//                '''
+//            }
+//        }
     }
     
 }
